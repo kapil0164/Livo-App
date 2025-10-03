@@ -1,11 +1,12 @@
 import express from "express"
 import dotenv from "dotenv"
+import app from "./app.js"
 
-dotenv.config()
-
-const app = express({
+dotenv.config({
       PATH: "./.env"
 })
+
+const app = express()
 const PORT = process.env.PORT || 8000
 
 app.get("/", (req, res) => {
